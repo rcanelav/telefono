@@ -1,8 +1,3 @@
-
-
-
-
-
 window.sr = ScrollReveal();
 sr.reveal('.navbar', {
     duration: 3500,
@@ -56,47 +51,35 @@ sr.reveal('.card', {
 
 
 // SmoothScrolling
-$(document).ready(function(){
-$("a").on('click', function(event) {
+$(document).ready(function() {
+    $("a").on('click', function(event) {
 
-    if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
 
-        $('html, body').animate({
+            $('html, body').animate({
                 scrollTop: $(hash).offset().top
-            }, 800, function(){
+            }, 1000, function() {
                 window.location.hash = hash;
             });
-        } 
-});
+        }
+    });
 });
 
 
 var navigation = document.getElementById("navbarNav");
 var btns = navigation.getElementsByClassName("nav-item");
 
-    for (var i = 0; i < btns.length; i++) {
-    
-         btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-            if (current.length > 0) { 
+for (var i = 0; i < btns.length; i++) {
+
+    btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) {
             current[0].className = current[0].className.replace(" active", "");
-            }
-        
-            this.className += " active";
-        
-        });
-    }
+        }
 
+        this.className += " active";
 
-   
-
-
-
-
-
-
-
-
-        
+    });
+}
